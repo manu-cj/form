@@ -20,6 +20,7 @@ age.addEventListener('keyup', () => {
     console.log(age.value);
     if (parseInt(age.value) >= 18) {
         aHardTruth.style.visibility = 'visible';
+        age.setCustomValidity('');
     }else {
         aHardTruth.style.visibility = 'hidden';
         age.setCustomValidity(`revient dans ${18 - parseInt(age.value)} ans frero`);
@@ -42,6 +43,7 @@ pwd.addEventListener('keyup', () => {
         pwd.setCustomValidity('Le mot de passe doit faire plus de 6 caractères frero !');
     }else {
         pwd.style.border = '3px #70e000 solid';
+        pwd.setCustomValidity('');
     }
     pwd.reportValidity();
 })
@@ -55,6 +57,7 @@ pwdConfirm.addEventListener('keyup', () => {
     }else {
         pwd.style.border = '3px #70e000 solid';
         pwdConfirm.style.border = '3px #70e000 solid';
+        pwdConfirm.setCustomValidity('');
     }
     pwdConfirm.reportValidity();
 })
